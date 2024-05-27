@@ -234,7 +234,7 @@ const Echarts: ForwardRefRenderFunction<EchartsHandle, EChartsProps> = (
   const initWexinChart = () => {
     const query = Taro.createSelectorQuery()
     query
-      .select(`#${canvasId}`)
+      .select(`#${canvasId}`).in(Taro.getCurrentInstance().page)
       .fields({
         node: true,
         size: true,
